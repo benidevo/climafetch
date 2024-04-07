@@ -4,11 +4,13 @@ options:
 steps:
 - id: 'Deploy Cloud Function'
   name: 'gcr.io/cloud-builders/gcloud'
-  args: ['functions', 'deploy', 'weather-forecast',
+  args: ['functions', 'deploy', 'weather_forecast',
          '--gen2',
          '--runtime', 'python311',
          '--trigger-http',
          '--allow-unauthenticated',
          '--source', '.',
          '--project', '$PROJECT_ID',
-         '--region', 'europe-west8']
+         '--region', 'europe-west8',
+         '--set-env-vars', 'REDIS_HOST=${_REDIS_HOST},REDIS_PASSWORD=${_REDIS_PASSWORD},OPEN_WEATHER_MAP_API_KEY=${_OPEN_WEATHER_MAP_API_KEY}']
+
