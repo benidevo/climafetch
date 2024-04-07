@@ -5,6 +5,7 @@ steps:
 - id: 'Deploy Cloud Function'
   name: 'gcr.io/cloud-builders/gcloud'
   args: ['functions', 'deploy', 'weather-forecast',
+         '--gen2',
          '--runtime', 'python311',
          '--trigger-http',
          '--allow-unauthenticated',
