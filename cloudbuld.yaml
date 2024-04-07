@@ -1,0 +1,10 @@
+steps:
+- id: 'Deploy Cloud Function'
+  name: 'gcr.io/cloud-builders/gcloud'
+  args: ['functions', 'deploy', 'weather-forecast',
+         '--runtime', 'python311',
+         '--trigger-http',
+         '--allow-unauthenticated',
+         '--source', '.',
+         '--project', '$PROJECT_ID',
+         '--region', 'europe-west-8']
