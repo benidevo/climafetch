@@ -12,7 +12,7 @@ class Weather(BaseModel):
 
 
 class Current(BaseModel):
-    dt: datetime
+    dt: Optional[datetime] = None
     sunrise: datetime
     sunset: datetime
     temp: float
@@ -22,14 +22,14 @@ class Current(BaseModel):
     dew_point: float = Field(..., alias="dew_point")
     uvi: float
     clouds: int
-    visibility: int
+    visibility: Optional[int] = None
     wind_speed: float
     wind_deg: int
     weather: List[Weather]
 
 
 class Hourly(BaseModel):
-    dt: datetime
+    dt: Optional[datetime] = None
     temp: float
     feels_like: float = Field(..., alias="feels_like")
     pressure: int
@@ -37,12 +37,10 @@ class Hourly(BaseModel):
     dew_point: float = Field(..., alias="dew_point")
     uvi: float
     clouds: int
-    visibility: int
+    visibility: Optional[int] = None
     wind_speed: float
     wind_deg: int
-    wind_gust: float
     weather: List[Weather]
-    pop: float
     rain: Optional[dict] = None
 
 

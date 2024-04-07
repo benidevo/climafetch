@@ -21,3 +21,5 @@ american_cities_coords = {
     "São Paulo, Brazil": {"lat": -23.5505, "lon": -46.6333},
     "Buenos Aires, Argentina": {"lat": -34.6037, "lon": -58.3816},
 }
+
+cites = {**european_cities_coords, **african_cities_coords, **american_cities_coords}

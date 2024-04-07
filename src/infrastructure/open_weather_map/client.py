@@ -1,12 +1,12 @@
 import logging
-from typing import Optional
+from typing import Optional, Union
 
 import requests
 from pydantic.types import Json
 
-from application.dto.weather import WeatherData
-from application.interfaces.weather_client import WeatherApiClient
-from config import settings
+from src.application.dto.weather import WeatherData
+from src.application.interfaces.weather_client import WeatherApiClient
+from src.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +18,7 @@ class OpenWeatherMapClient(WeatherApiClient):
         self.excluded_forecasts: str = settings.OPEN_WEATHER_MAP_EXCLUDED_FORECASTS
         self.weather_data: Optional[WeatherData] = None
 
-    def get_weather(self, lat: int, lon: int):
+    def get_weather(self, lat: Union[float, int], lon: Union[float, int]):
         url = f"{self.base_url}?lat={lat}&lon={lon}&exclude={self.excluded_forecasts}&appid={self.api_key}&units=metric"
         response: Optional[requests.Response] = self._make_request(url)
         self._validate_response(response)

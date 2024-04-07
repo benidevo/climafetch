@@ -3,9 +3,5 @@ from abc import ABC, abstractmethod
 
 class CacheRepository(ABC):
     @abstractmethod
-    def get(self, key):
-        raise NotImplementedError
-
-    @abstractmethod
-    def set(self, key, value, exp=None):
+    def save_forecast(self, key: str, value: str) -> None:
         raise NotImplementedError
