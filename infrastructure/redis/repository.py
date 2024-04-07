@@ -1,9 +1,9 @@
 import json
 
-from src.application.dto.weather import WeatherData
-from src.application.interfaces.cache_repository import CacheRepository
-from src.config import settings
-from src.infrastructure.redis.client import get_redis_client
+from application.dto.weather import WeatherData
+from application.interfaces.cache_repository import CacheRepository
+from config import settings
+from infrastructure.redis.client import get_redis_client
 
 
 class RedisCacheRepository(CacheRepository):

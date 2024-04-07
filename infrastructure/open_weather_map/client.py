@@ -4,9 +4,9 @@ from typing import Optional, Union
 import requests
 from pydantic.types import Json
 
-from src.application.dto.weather import WeatherData
-from src.application.interfaces.weather_client import WeatherApiClient
-from src.config import settings
+from application.dto.weather import WeatherData
+from application.interfaces.weather_client import WeatherApiClient
+from config import settings
 
 logger = logging.getLogger(__name__)
 

@@ -1,4 +1,4 @@
-from src.config.base import BaseConfig
+from config.base import BaseConfig
 
 
 class ProdConfig(BaseConfig):

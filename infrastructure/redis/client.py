@@ -4,7 +4,7 @@ from typing import Optional
 
 import redis
 
-from src.config import settings
+from config import settings
 
 logger = logging.getLogger(__name__)
 

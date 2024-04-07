@@ -1,12 +1,12 @@
 import logging
 from typing import List, Optional, Union
 
-from src.application.dto.weather import WeatherData
-from src.application.interfaces.cache_repository import CacheRepository
-from src.application.interfaces.weather_client import WeatherApiClient
-from src.fixtures.cities import cites
-from src.infrastructure.open_weather_map.client import OpenWeatherMapClient
-from src.infrastructure.redis.repository import RedisCacheRepository
+from application.dto.weather import WeatherData
+from application.interfaces.cache_repository import CacheRepository
+from application.interfaces.weather_client import WeatherApiClient
+from fixtures.cities import cites
+from infrastructure.open_weather_map.client import OpenWeatherMapClient
+from infrastructure.redis.repository import RedisCacheRepository
 
 logger = logging.getLogger(__name__)
 
@@ -23,6 +23,11 @@ class WeatherForecastService:
         return self.client.get_weather(lat, lon)
 
     def run(self) -> None:
+        """
+        A method to run the process of retrieving weather forecasts for cities.
+        This function iterates over a dictionary of cities and coordinates,
+        retrieves the weather forecast for each city, and saves the forecasts.
+        """
         city_count = 0
         logger.info("Retrieving weather forecasts")
         for city, coordinate in cites.items():

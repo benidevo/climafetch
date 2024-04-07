@@ -1,4 +1,4 @@
-from src.application.service import WeatherForecastService
+from application.service import WeatherForecastService
 
 import functions_framework
 

@@ -59,3 +59,8 @@ env.bak/
 # Other files and directories to ignore
 .DS_Store
 Thumbs.db
+
+#
+docker-compose.yml
+dev-requirements.txt
+run.sh
